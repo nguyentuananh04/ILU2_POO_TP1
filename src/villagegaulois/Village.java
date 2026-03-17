@@ -79,10 +79,11 @@ public class Village {
 		private void afficherMarche() {
 			StringBuilder chaine = new StringBuilder();
 			int nbEtalVide = 0;
-					
+			
+			chaine.append("Le marché du village \"" + "\" possède plusieurs étals : \n");
 			for (int i = 0; i < etals.length; i++) {
 				if (etals[i].isEtalOccupe()) {
-					chaine.append(etals[i].afficherEtal());
+					chaine.append(etals[i].getVendeur().getNom() + " vend " + etals[i].getNbProduit() + " " + etals[i].getProduit() + "\n");
 				}
 				else {
 					nbEtalVide++;
