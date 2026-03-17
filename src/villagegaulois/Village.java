@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 import personnages.Chef;
 import personnages.Gaulois;
-import villagegaulois.Etal;
 
 public class Village {
 	private String nom;
@@ -13,8 +12,10 @@ public class Village {
 	private int nbVillageois = 0;
 	
 	private static class Marche {
+		// Attributs de la classe Marche
 		private Etal[] etals;
 		
+		// Constructeur de la classe Marche
 		private Marche(int nbEtals) {
 			etals = new Etal[nbEtals];
 			
@@ -22,6 +23,8 @@ public class Village {
 				etals[i] = new Etal();
 			}
 		}
+		
+		// Methode de la classe Marche
 	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
