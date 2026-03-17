@@ -173,4 +173,8 @@ public class Village {
 		}
 		return chaine.toString();
 	}
+	
+	public Etal rechercherEtal (Gaulois vendeur) {
+		return marche.trouverVendeur(vendeur);
+	}
 }
