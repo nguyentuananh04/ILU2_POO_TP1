@@ -10,6 +10,7 @@ public class Village {
 	private Chef chef;
 	private Gaulois[] villageois;
 	private int nbVillageois = 0;
+	private Marche marche;
 	
 	private static class Marche {
 		// Attributs de la classe Marche
@@ -26,7 +27,7 @@ public class Village {
 		
 		// Methode de la classe Marche
 		private void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
-			if(indiceEtal >= 0 && indiceEtal < etals.length - 1) {
+			if(indiceEtal >= 0 && indiceEtal < etals.length) {
 				etals[indiceEtal - 1 ].occuperEtal(vendeur, produit, nbProduit);
 			}
 			else {
@@ -94,9 +95,10 @@ public class Village {
 		}
 	}
 
-	public Village(String nom, int nbVillageoisMaximum) {
+	public Village(String nom, int nbVillageoisMaximum, int nbEtals) {
 		this.nom = nom;
 		villageois = new Gaulois[nbVillageoisMaximum];
+		this.marche = new Marche(nbEtals);
 	}
 
 	public String getNom() {
