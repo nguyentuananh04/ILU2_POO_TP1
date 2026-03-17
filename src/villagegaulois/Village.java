@@ -64,6 +64,16 @@ public class Village {
 			
 			return etalsAvecProduit;
 		}
+
+		private Etal trouverVendeur (Gaulois gaulois) {
+			for (int i = 0; i < etals.length; i++) {
+				if(etals[i].getVendeur().equals(gaulois)) {
+					return etals[i];
+				}
+			}
+			
+			return null;
+		}
 	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
