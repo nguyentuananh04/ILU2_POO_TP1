@@ -16,6 +16,14 @@ public class Etal {
 	public Gaulois getVendeur() {
 		return vendeur;
 	}
+	
+	public String getProduit() {
+		return produit;
+	}
+	
+	public int getNbProduit() {
+		return quantite;
+	}
 
 	public void occuperEtal(Gaulois vendeur, String produit, int quantite) {
 		this.vendeur = vendeur;
