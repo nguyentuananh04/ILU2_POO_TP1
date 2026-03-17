@@ -28,7 +28,7 @@ public class Village {
 		// Methode de la classe Marche
 		private void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
 			if(indiceEtal >= 0 && indiceEtal < etals.length) {
-				etals[indiceEtal - 1 ].occuperEtal(vendeur, produit, nbProduit);
+				etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
 			}
 			else {
 				System.out.println("L'indice d'etal introuvable.\n");
@@ -141,6 +141,17 @@ public class Village {
 				chaine.append("- " + villageois[i].getNom() + "\n");
 			}
 		}
+		return chaine.toString();
+	}
+	
+	
+	public String installerVendeur(Gaulois vendeur, String produit, int nbProduit) {
+		StringBuilder chaine = new StringBuilder();
+		chaine.append(vendeur.getNom() + " cherche un endroit pour vendre " + nbProduit + " " + produit + ".\n");	
+		int indexEtalLibre = marche.trouverEtalLibre();
+		marche.utiliserEtal(indexEtalLibre, vendeur, produit, nbProduit);
+		chaine.append("Le vendeur " + vendeur.getNom() + " vend des " + produit + " à l'étal n° " + (indexEtalLibre + 1) + ".\n" );
+		
 		return chaine.toString();
 	}
 }
