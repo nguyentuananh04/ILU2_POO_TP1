@@ -43,6 +43,27 @@ public class Village {
 			
 			return -1;
 		}
+		
+		private Etal[] trouverEtals(String produit) {
+			int countEtalAvecProduit = 0;
+			
+			for (int i = 0; i < etals.length; i++) {
+				if (etals[i].contientProduit(produit)) {
+					countEtalAvecProduit++;
+				}
+			}
+			
+			Etal[] etalsAvecProduit = new Etal[countEtalAvecProduit];
+			int indexEtalAvecProduit = 0;
+			
+			for (int i = 0; i < etals.length; i++) {
+				if (etals[i].contientProduit(produit)) {
+					etalsAvecProduit[indexEtalAvecProduit++] = etals[i];
+				}
+			}
+			
+			return etalsAvecProduit;
+		}
 	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
