@@ -154,4 +154,23 @@ public class Village {
 		
 		return chaine.toString();
 	}
+	
+	public String rechercherVendeursProduit (String produit) {
+		StringBuilder chaine = new StringBuilder();
+		Etal[] etalsAvecProduit = marche.trouverEtals(produit);
+		
+		if (etalsAvecProduit.length == 0) {
+			chaine.append("Il n'y a pas de vendeur qui propose des " + produit + " au marché.\n");
+		}
+		else if (etalsAvecProduit.length == 1) {
+			chaine.append("Seul le vendeur " + etalsAvecProduit[0].getVendeur().getNom() + " propose des " + produit + " au marché.\n");
+		}
+		else {
+			chaine.append("Les vendeurs qui proposent des " + produit + " sont :\n");
+			for (int i = 0; i < etalsAvecProduit.length; i++) {
+				chaine.append("- " + etalsAvecProduit[i].getVendeur().getNom() + "\n");
+			}
+		}
+		return chaine.toString();
+	}
 }
