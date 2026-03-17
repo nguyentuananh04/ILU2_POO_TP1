@@ -25,6 +25,16 @@ public class Village {
 		}
 		
 		// Methode de la classe Marche
+		void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+			if(indiceEtal >= 0 && indiceEtal < etals.length - 1) {
+				etals[indiceEtal - 1 ].occuperEtal(vendeur, produit, nbProduit);
+			}
+			else {
+				System.out.println("L'indice d'etal introuvable.\n");
+			}
+		}
+		
+		
 	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
