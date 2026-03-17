@@ -2,12 +2,18 @@ package villagegaulois;
 
 import personnages.Chef;
 import personnages.Gaulois;
+import villagegaulois.Etal;
 
 public class Village {
 	private String nom;
 	private Chef chef;
 	private Gaulois[] villageois;
 	private int nbVillageois = 0;
+	
+	private static class Marche {
+		private Etal[] etals;
+		
+	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
 		this.nom = nom;
