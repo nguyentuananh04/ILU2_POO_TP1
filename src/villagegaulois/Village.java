@@ -34,7 +34,15 @@ public class Village {
 			}
 		}
 		
-		
+		private int trouverEtalLibre() {
+			for (int i = 0; i < etals.length; i++) {
+				if (!etals[i].isEtalOccupe()) {
+					return i;
+				}
+			}
+			
+			return -1;
+		}
 	}
 
 	public Village(String nom, int nbVillageoisMaximum) {
