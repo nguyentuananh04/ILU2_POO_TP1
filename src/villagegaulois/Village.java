@@ -25,7 +25,7 @@ public class Village {
 		}
 		
 		// Methode de la classe Marche
-		void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+		private void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
 			if(indiceEtal >= 0 && indiceEtal < etals.length - 1) {
 				etals[indiceEtal - 1 ].occuperEtal(vendeur, produit, nbProduit);
 			}
