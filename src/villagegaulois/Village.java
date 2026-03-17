@@ -150,7 +150,7 @@ public class Village {
 		chaine.append(vendeur.getNom() + " cherche un endroit pour vendre " + nbProduit + " " + produit + ".\n");	
 		int indexEtalLibre = marche.trouverEtalLibre();
 		marche.utiliserEtal(indexEtalLibre, vendeur, produit, nbProduit);
-		chaine.append("Le vendeur " + vendeur.getNom() + " vend des " + produit + " à l'étal n° " + (indexEtalLibre + 1) + ".\n" );
+		chaine.append("Le vendeur " + vendeur.getNom() + " vend des " + produit + " à l'étal n°" + (indexEtalLibre + 1) + ".\n" );
 		
 		return chaine.toString();
 	}
